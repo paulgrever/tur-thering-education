@@ -1,0 +1,9 @@
+<h1>Index page</h1>
+
+<% @cohorts.find_cohorts.each do |cohort| %>
+  <li> <%=cohort.text %> </li>
+  <% end %>
+
+  <% @cohorts.find_topics.each do |topic| %>
+    <li> <%=topic.text %> </li>
+  <% end %>
