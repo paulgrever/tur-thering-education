@@ -1,9 +1,20 @@
-<h1>Index page</h1>
+<div class="container-fluid">
+  <div class="row text-center">
+    <h1>Cohort Page</h1>
+  </div>
+<div class='row text-center'>
 
-<% @cohorts.find_cohorts.each do |cohort| %>
-  <li> <%=cohort.text %> </li>
+<% @cohorts.find_cohorts.each_with_index do |cohort, index| %>
+  <%= link_to(cohort.text, "#/", class:"btn btn-lg btn-primary", id:"cohort-#{index}") %>
   <% end %>
-
+</div>
   <% @cohorts.find_topics.each do |topic| %>
     <li> <%=topic.text %> </li>
   <% end %>
+
+
+  <p>SPECIFIC COHORT</p>
+  <% @cohorts.cohorts_and_topics.each do |topic| %>
+    <li> <%=topic.text %> </li>
+  <% end %>
+</div>
